@@ -1,0 +1,7 @@
+You can use the "parseSimFile.py" to get stress and strain field errors from the various run files.
+Just provide name of run file as string argument to python, example:
+
+python parseSimFile.py 'slurm-2233782.out'
+
+
+It can be modified to get ERRE,ERRS. Instead of printing at command line, it can also be written to a file
