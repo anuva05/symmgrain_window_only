@@ -1,0 +1,32 @@
++ INPUTDIR_BASE=/pylon5/ms4s86p/kulkarna
++ PROB=window_only
++ WORKDIR_BASE=/local/2234888
++ hostname
+l003.pvt.bridges.psc.edu
++ scontrol show job 2234888
++ grep mem
+   TRES=cpu=3,mem=128G,node=1
++ cd /pylon5/ms4s86p/kulkarna/window_only
++ module load matlab
+++ /usr/bin/modulecmd bash load matlab
++ eval LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a ';export' 'LOADEDMODULES;MATLABROOT=/opt/packages/matlab/R2017a' ';export' 'MATLABROOT;PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin' ';export' 'PATH;_LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a' ';export' '_LMFILES_;'
+++ LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a
+++ export LOADEDMODULES
+++ MATLABROOT=/opt/packages/matlab/R2017a
+++ export MATLABROOT
+++ PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin
+++ export PATH
+++ _LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a
+++ export _LMFILES_
++ ifort -mcmodel medium -shared-intel -o p128.exe fewIterSymm.f
+fewIterSymm.f(626): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+101   format(i3,4(1x,e10.4),10(1x,F7.4))
+----------------------^
++ WORKDIR=/local/2234888/window_only.2234888
++ mkdir -p /local/2234888/window_only.2234888
++ cp p128.exe /local/2234888/window_only.2234888
++ cp fft.dim fft.in /local/2234888/window_only.2234888
++ cp cuel2.sx cupl2.sx /local/2234888/window_only.2234888
++ cp sq128_symmgrain.FFT /local/2234888/window_only.2234888
++ cp compress_update_pipeline2d.m compute_full_gamma.m compute_gamma_ds1111.m compute_gamma_ds_specific.m compute_gamma_fft.m fast.m get_stress.m main.m matlab_main_final.m model_after_conv.m model_before_tx.m MS_cij2cijkl.m MS_cijkl2cij.m old_fast.m read_cg.m /local/2234888/window_only.2234888
+slurmstepd: error: *** JOB 2234888 ON l003 CANCELLED AT 2018-01-26T09:30:57 ***

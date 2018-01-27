@@ -1,0 +1,1383 @@
++ INPUTDIR_BASE=/pylon5/ms4s86p/kulkarna
++ PROB=window_only
++ WORKDIR_BASE=/local/2233821
++ hostname
+l007.pvt.bridges.psc.edu
++ scontrol show job 2233821
++ grep mem
+   TRES=cpu=3,mem=128G,node=1
++ cd /pylon5/ms4s86p/kulkarna/window_only
++ module load matlab
+++ /usr/bin/modulecmd bash load matlab
++ eval LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a ';export' 'LOADEDMODULES;MATLABROOT=/opt/packages/matlab/R2017a' ';export' 'MATLABROOT;PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin' ';export' 'PATH;_LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a' ';export' '_LMFILES_;'
+++ LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a
+++ export LOADEDMODULES
+++ MATLABROOT=/opt/packages/matlab/R2017a
+++ export MATLABROOT
+++ PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin
+++ export PATH
+++ _LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a
+++ export _LMFILES_
++ ifort -mcmodel medium -shared-intel -o p128.exe TEST_1iter.f
+TEST_1iter.f(626): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+101   format(i3,4(1x,e10.4),10(1x,F7.4))
+----------------------^
++ WORKDIR=/local/2233821/window_only.2233821
++ mkdir -p /local/2233821/window_only.2233821
++ cp p128.exe /local/2233821/window_only.2233821
++ cp fft.dim fft.in /local/2233821/window_only.2233821
++ cp cuel2.sx cupl2.sx /local/2233821/window_only.2233821
++ cp sq128_symmgrain.FFT /local/2233821/window_only.2233821
++ cp compress_update_pipeline2d.m compute_full_gamma.m compute_gamma_ds1111.m compute_gamma_ds_specific.m compute_gamma_fft.m fast.m get_stress.m main.m matlab_main_final.m model_after_conv.m model_before_tx.m MS_cij2cijkl.m MS_cijkl2cij.m old_fast.m read_cg.m /local/2233821/window_only.2233821
++ cp avgcg.mat Gfft1111.mat Gfft1112.mat Gfft1113.mat Gfft1121.mat Gfft1122.mat Gfft1123.mat Gfft1131.mat Gfft1132.mat Gfft1133.mat Gfft1211.mat Gfft1212.mat Gfft1213.mat Gfft1221.mat Gfft1222.mat Gfft1223.mat Gfft1231.mat Gfft1232.mat Gfft1233.mat Gfft1311.mat Gfft1312.mat Gfft1313.mat Gfft1321.mat Gfft1322.mat Gfft1323.mat Gfft1331.mat Gfft1332.mat Gfft1333.mat Gfft2111.mat Gfft2112.mat Gfft2113.mat Gfft2121.mat Gfft2122.mat Gfft2123.mat Gfft2131.mat Gfft2132.mat Gfft2133.mat Gfft2211.mat Gfft2212.mat Gfft2213.mat Gfft2221.mat Gfft2222.mat Gfft2223.mat Gfft2231.mat Gfft2232.mat Gfft2233.mat Gfft2311.mat Gfft2312.mat Gfft2313.mat Gfft2321.mat Gfft2322.mat Gfft2323.mat Gfft2331.mat Gfft2332.mat Gfft2333.mat Gfft3111.mat Gfft3112.mat Gfft3113.mat Gfft3121.mat Gfft3122.mat Gfft3123.mat Gfft3131.mat Gfft3132.mat Gfft3133.mat Gfft3211.mat Gfft3212.mat Gfft3213.mat Gfft3221.mat Gfft3222.mat Gfft3223.mat Gfft3231.mat Gfft3232.mat Gfft3233.mat Gfft3311.mat Gfft3312.mat Gfft3313.mat Gfft3321.mat Gfft3322.mat Gfft3323.mat Gfft3331.mat Gfft3332.mat Gfft3333.mat init.mat /local/2233821/window_only.2233821
++ cd /local/2233821/window_only.2233821
++ ls -al
+total 1540952
+drwxr-xr-x 2 kulkarna ms4s86p     4096 Jan 25 14:30 .
+drwxr-xr-x 3 kulkarna ms4s86p       40 Jan 25 14:30 ..
+-rw-r--r-- 1 kulkarna ms4s86p      478 Jan 25 14:30 avgcg.mat
+-rw-r--r-- 1 kulkarna ms4s86p     5397 Jan 25 14:30 compress_update_pipeline2d.m
+-rw-r--r-- 1 kulkarna ms4s86p      907 Jan 25 14:30 compute_full_gamma.m
+-rw-r--r-- 1 kulkarna ms4s86p      597 Jan 25 14:30 compute_gamma_ds1111.m
+-rw-r--r-- 1 kulkarna ms4s86p      649 Jan 25 14:30 compute_gamma_ds_specific.m
+-rw-r--r-- 1 kulkarna ms4s86p     1469 Jan 25 14:30 compute_gamma_fft.m
+-rw-r--r-- 1 kulkarna ms4s86p      458 Jan 25 14:30 cuel2.sx
+-rw-r--r-- 1 kulkarna ms4s86p      930 Jan 25 14:30 cupl2.sx
+-rw-r--r-- 1 kulkarna ms4s86p     2851 Jan 25 14:30 fast.m
+-rw-r--r-- 1 kulkarna ms4s86p     3130 Jan 25 14:30 fft.dim
+-rw-r--r-- 1 kulkarna ms4s86p     2674 Jan 25 14:30 fft.in
+-rw-r--r-- 1 kulkarna ms4s86p     5364 Jan 25 14:30 get_stress.m
+-rw-r--r-- 1 kulkarna ms4s86p 23456757 Jan 25 14:30 Gfft1111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860740 Jan 25 14:30 Gfft1112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984756 Jan 25 14:30 Gfft1113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080960 Jan 25 14:30 Gfft1121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712879 Jan 25 14:30 Gfft1122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15930905 Jan 25 14:30 Gfft1123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24004698 Jan 25 14:30 Gfft1131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775502 Jan 25 14:30 Gfft1132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873305 Jan 25 14:30 Gfft1133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860484 Jan 25 14:30 Gfft1211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23751706 Jan 25 14:30 Gfft1212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890999 Jan 25 14:30 Gfft1213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23715436 Jan 25 14:30 Gfft1221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23954999 Jan 25 14:30 Gfft1222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027285 Jan 25 14:30 Gfft1223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23774172 Jan 25 14:30 Gfft1231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23978281 Jan 25 14:30 Gfft1232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032250 Jan 25 14:30 Gfft1233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984489 Jan 25 14:30 Gfft1311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890898 Jan 25 14:30 Gfft1312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15897179 Jan 25 14:30 Gfft1313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15927983 Jan 25 14:30 Gfft1321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16025923 Jan 25 14:30 Gfft1322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16033510 Jan 25 14:30 Gfft1323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873771 Jan 25 14:30 Gfft1331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032499 Jan 25 14:30 Gfft1332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049501 Jan 25 14:30 Gfft1333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080285 Jan 25 14:30 Gfft2111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23714933 Jan 25 14:30 Gfft2112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15928425 Jan 25 14:30 Gfft2113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23779875 Jan 25 14:30 Gfft2121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883179 Jan 25 14:30 Gfft2122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992855 Jan 25 14:30 Gfft2123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883296 Jan 25 14:30 Gfft2131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23907365 Jan 25 14:30 Gfft2132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988754 Jan 25 14:30 Gfft2133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712227 Jan 25 14:30 Gfft2211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23953761 Jan 25 14:30 Gfft2212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16026498 Jan 25 14:30 Gfft2213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883681 Jan 25 14:30 Gfft2221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23302053 Jan 25 14:30 Gfft2222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602317 Jan 25 14:30 Gfft2223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23905551 Jan 25 14:30 Gfft2231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23818938 Jan 25 14:30 Gfft2232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15910079 Jan 25 14:30 Gfft2233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15931163 Jan 25 14:30 Gfft2311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027501 Jan 25 14:30 Gfft2312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16034338 Jan 25 14:30 Gfft2313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992739 Jan 25 14:30 Gfft2321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602390 Jan 25 14:30 Gfft2322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15605947 Jan 25 14:30 Gfft2323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989426 Jan 25 14:30 Gfft2331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914593 Jan 25 14:30 Gfft2332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925211 Jan 25 14:30 Gfft2333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24005652 Jan 25 14:30 Gfft3111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23773905 Jan 25 14:30 Gfft3112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15874060 Jan 25 14:30 Gfft3113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23884037 Jan 25 14:30 Gfft3121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23906281 Jan 25 14:30 Gfft3122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989670 Jan 25 14:30 Gfft3123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23705091 Jan 25 14:30 Gfft3131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23778046 Jan 25 14:30 Gfft3132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15936070 Jan 25 14:30 Gfft3133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775450 Jan 25 14:30 Gfft3211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23980170 Jan 25 14:30 Gfft3212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032851 Jan 25 14:30 Gfft3213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23908511 Jan 25 14:30 Gfft3221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23819518 Jan 25 14:30 Gfft3222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914484 Jan 25 14:30 Gfft3223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23777939 Jan 25 14:30 Gfft3231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23453243 Jan 25 14:30 Gfft3232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633916 Jan 25 14:30 Gfft3233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873566 Jan 25 14:30 Gfft3311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16031995 Jan 25 14:30 Gfft3312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049455 Jan 25 14:30 Gfft3313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988881 Jan 25 14:30 Gfft3321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15909842 Jan 25 14:30 Gfft3322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925297 Jan 25 14:30 Gfft3323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15935758 Jan 25 14:30 Gfft3331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633868 Jan 25 14:30 Gfft3332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15645819 Jan 25 14:30 Gfft3333.mat
+-rw-r--r-- 1 kulkarna ms4s86p      909 Jan 25 14:30 init.mat
+-rw-r--r-- 1 kulkarna ms4s86p     2874 Jan 25 14:30 main.m
+-rw-r--r-- 1 kulkarna ms4s86p     2862 Jan 25 14:30 matlab_main_final.m
+-rw-r--r-- 1 kulkarna ms4s86p     1947 Jan 25 14:30 model_after_conv.m
+-rw-r--r-- 1 kulkarna ms4s86p     1907 Jan 25 14:30 model_before_tx.m
+-rw-r--r-- 1 kulkarna ms4s86p     4898 Jan 25 14:30 MS_cij2cijkl.m
+-rw-r--r-- 1 kulkarna ms4s86p     3419 Jan 25 14:30 MS_cijkl2cij.m
+-rw-r--r-- 1 kulkarna ms4s86p     3746 Jan 25 14:30 old_fast.m
+-rwxr-xr-x 1 kulkarna ms4s86p   197328 Jan 25 14:30 p128.exe
+-rw-r--r-- 1 kulkarna ms4s86p      795 Jan 25 14:30 read_cg.m
+-rw-r--r-- 1 kulkarna ms4s86p  3637248 Jan 25 14:30 sq128_symmgrain.FFT
++ ./p128.exe
+   1.000000    
+ ***************************************************
+ STEP =            1
+ in  loop
+ writing...
+ ITER =            0
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  8.5448676E-11
+ ERRS=   1.033995    
+ DDISGRADMACRO(1,1),(2,2)=  9.3492908E-06  1.5572357E-05
+ STRAIN FIELD ERROR =  1.7089733E-06
+ STRESS FIELD ERROR =  0.1262653    
+ in  loop
+ writing...
+ ITER =            1
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.0791643E-10
+ ERRS=   10.67585    
+ DDISGRADMACRO(1,1),(2,2)=  3.2472587E-07  5.5296618E-06
+ STRAIN FIELD ERROR =  4.1583280E-06
+ STRESS FIELD ERROR =   1.486688    
+ in  loop
+ writing...
+ ITER =            2
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  9.5924470E-11
+ ERRS=   5.635664    
+ DDISGRADMACRO(1,1),(2,2)= -5.3994836E-06 -2.7762253E-06
+ STRAIN FIELD ERROR =  1.9184893E-06
+ STRESS FIELD ERROR =  0.8814672    
+ in  loop
+ writing...
+ ITER =            3
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  7.0660752E-12
+ ERRS=  0.1543888    
+ DDISGRADMACRO(1,1),(2,2)= -4.3974906E-06 -4.7767535E-06
+ STRAIN FIELD ERROR =  1.4132149E-07
+ STRESS FIELD ERROR =  2.4847168E-02
+ in  loop
+ writing...
+ ITER =            4
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.9229805E-11
+ ERRS=   1.222868    
+ DDISGRADMACRO(1,1),(2,2)= -2.7440728E-07 -2.5423860E-06
+ STRAIN FIELD ERROR =  3.8459606E-07
+ STRESS FIELD ERROR =  0.1904883    
+ in  loop
+ writing...
+ ITER =            5
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.6172678E-11
+ ERRS=  0.8611637    
+ DDISGRADMACRO(1,1),(2,2)=  2.4473964E-06  1.0063212E-07
+ STRAIN FIELD ERROR =  3.2345352E-07
+ STRESS FIELD ERROR =  0.1294443    
+ in  loop
+ writing...
+ ITER =            6
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.9329343E-12
+ ERRS=  5.4870192E-02
+ DDISGRADMACRO(1,1),(2,2)=  2.2820516E-06  1.1316168E-06
+ STRAIN FIELD ERROR =  5.8658678E-08
+ STRESS FIELD ERROR =  8.1443414E-03
+ in  loop
+ writing...
+ ITER =            7
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.8609825E-12
+ ERRS=  0.1372426    
+ DDISGRADMACRO(1,1),(2,2)=  5.6746728E-07  7.6368065E-07
+ STRAIN FIELD ERROR =  3.7219646E-08
+ STRESS FIELD ERROR =  2.0494670E-02
+ in  loop
+ writing...
+ ITER =            8
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.0644478E-12
+ ERRS=  0.1265019    
+ DDISGRADMACRO(1,1),(2,2)= -7.9748713E-07  7.4096270E-08
+ STRAIN FIELD ERROR =  4.1288949E-08
+ STRESS FIELD ERROR =  1.9086305E-02
+ in  loop
+ writing...
+ ITER =            9
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 212.840787 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 6.651057 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  4.6878018E-12
+ ERRS=  2.0257073E-02
+ DDISGRADMACRO(1,1),(2,2)= -4.9577875E-07 -2.0856413E-07
+ STRAIN FIELD ERROR =  9.3756022E-08
+ STRESS FIELD ERROR =  3.0653388E-03
+ in  loop
+ writing...
+ ITER =           11
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.2061361E-13
+ ERRS=  1.0414679E-02
+ DDISGRADMACRO(1,1),(2,2)= -7.4644539E-09 -1.8255336E-07
+ STRAIN FIELD ERROR =  4.4122714E-09
+ STRESS FIELD ERROR =  1.5751544E-03
+ in  loop
+ writing...
+ ITER =           12
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.4560532E-13
+ ERRS=  6.9558057E-03
+ DDISGRADMACRO(1,1),(2,2)=  2.7235762E-07 -6.2442325E-08
+ STRAIN FIELD ERROR =  2.9121059E-09
+ STRESS FIELD ERROR =  1.0504860E-03
+ in  loop
+ writing...
+ ITER =           13
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.1116745E-13
+ ERRS=  2.6389512E-03
+ DDISGRADMACRO(1,1),(2,2)=  2.5418953E-07  9.2417700E-09
+ STRAIN FIELD ERROR =  2.2233488E-09
+ STRESS FIELD ERROR =  3.9826240E-04
+ in  loop
+ writing...
+ ITER =           14
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  5.2825498E-14
+ ERRS=  1.6827873E-03
+ DDISGRADMACRO(1,1),(2,2)=  8.4848899E-08  1.7022520E-08
+ STRAIN FIELD ERROR =  1.0565099E-09
+ STRESS FIELD ERROR =  2.5399838E-04
+ in  loop
+ writing...
+ ITER =           15
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.7851062E-14
+ ERRS=  8.6778484E-04
+ DDISGRADMACRO(1,1),(2,2)= -5.6547421E-08  3.9687968E-09
+ STRAIN FIELD ERROR =  3.5702119E-10
+ STRESS FIELD ERROR =  1.3102671E-04
+ in  loop
+ writing...
+ ITER =           16
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.0008664E-14
+ ERRS=  2.6754336E-04
+ DDISGRADMACRO(1,1),(2,2)= -9.2996885E-08  7.1921669E-10
+ STRAIN FIELD ERROR =  2.0017325E-10
+ STRESS FIELD ERROR =  4.0400049E-05
+ in  loop
+ writing...
+ ITER =           17
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  7.9204628E-15
+ ERRS=  2.4310687E-04
+ DDISGRADMACRO(1,1),(2,2)= -5.2675755E-08  7.0653270E-09
+ STRAIN FIELD ERROR =  1.5840923E-10
+ STRESS FIELD ERROR =  3.6705063E-05
+ in  loop
+ writing...
+ ITER =           18
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  3.6009463E-15
+ ERRS=  1.4797792E-04
+ DDISGRADMACRO(1,1),(2,2)=  2.2189739E-10  1.0489157E-08
+ STRAIN FIELD ERROR =  7.2018919E-11
+ STRESS FIELD ERROR =  2.2339040E-05
+ in  loop
+ writing...
+ ITER =           19
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.1878955E-15
+ ERRS=  2.8198443E-05
+ DDISGRADMACRO(1,1),(2,2)=  2.5439917E-08  5.6644187E-09
+ STRAIN FIELD ERROR =  2.3757907E-11
+ STRESS FIELD ERROR =  4.2568395E-06
+ disgradmacro(1,1),disgradmacro(2,2),disgradmacro(3,3)
+ -2.0966341E-05 -1.2322708E-05  4.9999999E-05
+ disgradmacro(1,1)/disgradmacro(3,3)
+ -0.4193268    
+ scauav1(1,1),scauav1(2,2),scauav1(3,3)
+ -4.2551421E-03 -2.0816314E-03   6.570610    
+ 
+ AVERAGE PLASTIC ROTATION =  1.2899107E-05
+ AVERAGE LOCAL ROTATION =  0.0000000E+00
+ 
++ matlab -nodisplay
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> Exception in thread "AWT-EventQueue-0" java.lang.RuntimeException: std::exception for "matlab.workingfolder.LastFolderPath": fl:filesystem:SystemError
+	at com.mathworks.services.settings.Setting.nativeSet(Native Method)
+	at com.mathworks.services.settings.Setting.set(Setting.java:913)
+	at com.mathworks.services.settings.Setting.set(Setting.java:769)
+	at com.mathworks.services.settings.Setting.set(Setting.java:709)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder.setStringSettingValue(InitialWorkingFolder.java:50)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder.access$000(InitialWorkingFolder.java:15)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder$1.actionPerformed(InitialWorkingFolder.java:34)
+	at com.mathworks.jmi.MatlabPath$DeferredActionEvent.dispatch(MatlabPath.java:152)
+	at com.mathworks.util.QueueEvent$QueueTarget.processEvent(QueueEvent.java:89)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$200(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+>> >> >> >> >> >> >> getting stress
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+filename =
+
+    'SG10111.out'
+
+
+filename =
+
+    'SG10211.out'
+
+
+filename =
+
+    'SG10311.out'
+
+
+filename =
+
+    'SG10411.out'
+
+
+filename =
+
+    'SG10112.out'
+
+
+filename =
+
+    'SG10212.out'
+
+
+filename =
+
+    'SG10312.out'
+
+
+filename =
+
+    'SG10412.out'
+
+
+filename =
+
+    'SG10113.out'
+
+
+filename =
+
+    'SG10213.out'
+
+
+filename =
+
+    'SG10313.out'
+
+
+filename =
+
+    'SG10413.out'
+
+
+filename =
+
+    'SG10121.out'
+
+
+filename =
+
+    'SG10221.out'
+
+
+filename =
+
+    'SG10321.out'
+
+
+filename =
+
+    'SG10421.out'
+
+
+filename =
+
+    'SG10122.out'
+
+
+filename =
+
+    'SG10222.out'
+
+
+filename =
+
+    'SG10322.out'
+
+
+filename =
+
+    'SG10422.out'
+
+
+filename =
+
+    'SG10123.out'
+
+
+filename =
+
+    'SG10223.out'
+
+
+filename =
+
+    'SG10323.out'
+
+
+filename =
+
+    'SG10423.out'
+
+
+filename =
+
+    'SG10131.out'
+
+
+filename =
+
+    'SG10231.out'
+
+
+filename =
+
+    'SG10331.out'
+
+
+filename =
+
+    'SG10431.out'
+
+
+filename =
+
+    'SG10132.out'
+
+
+filename =
+
+    'SG10232.out'
+
+
+filename =
+
+    'SG10332.out'
+
+
+filename =
+
+    'SG10432.out'
+
+
+filename =
+
+    'SG10133.out'
+
+
+filename =
+
+    'SG10233.out'
+
+
+filename =
+
+    'SG10333.out'
+
+
+filename =
+
+    'SG10433.out'
+
+>> >> >> >> + ls -ltr
+total 1642564
+-rwxr-xr-x  1 kulkarna ms4s86p   197328 Jan 25 14:30 p128.exe
+-rw-r--r--  1 kulkarna ms4s86p     3130 Jan 25 14:30 fft.dim
+-rw-r--r--  1 kulkarna ms4s86p     2674 Jan 25 14:30 fft.in
+-rw-r--r--  1 kulkarna ms4s86p      458 Jan 25 14:30 cuel2.sx
+-rw-r--r--  1 kulkarna ms4s86p      930 Jan 25 14:30 cupl2.sx
+-rw-r--r--  1 kulkarna ms4s86p  3637248 Jan 25 14:30 sq128_symmgrain.FFT
+-rw-r--r--  1 kulkarna ms4s86p     5397 Jan 25 14:30 compress_update_pipeline2d.m
+-rw-r--r--  1 kulkarna ms4s86p      907 Jan 25 14:30 compute_full_gamma.m
+-rw-r--r--  1 kulkarna ms4s86p      597 Jan 25 14:30 compute_gamma_ds1111.m
+-rw-r--r--  1 kulkarna ms4s86p      649 Jan 25 14:30 compute_gamma_ds_specific.m
+-rw-r--r--  1 kulkarna ms4s86p     1469 Jan 25 14:30 compute_gamma_fft.m
+-rw-r--r--  1 kulkarna ms4s86p     2851 Jan 25 14:30 fast.m
+-rw-r--r--  1 kulkarna ms4s86p     5364 Jan 25 14:30 get_stress.m
+-rw-r--r--  1 kulkarna ms4s86p     2874 Jan 25 14:30 main.m
+-rw-r--r--  1 kulkarna ms4s86p     2862 Jan 25 14:30 matlab_main_final.m
+-rw-r--r--  1 kulkarna ms4s86p     1947 Jan 25 14:30 model_after_conv.m
+-rw-r--r--  1 kulkarna ms4s86p     1907 Jan 25 14:30 model_before_tx.m
+-rw-r--r--  1 kulkarna ms4s86p     4898 Jan 25 14:30 MS_cij2cijkl.m
+-rw-r--r--  1 kulkarna ms4s86p     3419 Jan 25 14:30 MS_cijkl2cij.m
+-rw-r--r--  1 kulkarna ms4s86p     3746 Jan 25 14:30 old_fast.m
+-rw-r--r--  1 kulkarna ms4s86p      795 Jan 25 14:30 read_cg.m
+-rw-r--r--  1 kulkarna ms4s86p      478 Jan 25 14:30 avgcg.mat
+-rw-r--r--  1 kulkarna ms4s86p 23456757 Jan 25 14:30 Gfft1111.mat
+-rw-r--r--  1 kulkarna ms4s86p 23860740 Jan 25 14:30 Gfft1112.mat
+-rw-r--r--  1 kulkarna ms4s86p 15984756 Jan 25 14:30 Gfft1113.mat
+-rw-r--r--  1 kulkarna ms4s86p 24080960 Jan 25 14:30 Gfft1121.mat
+-rw-r--r--  1 kulkarna ms4s86p 23712879 Jan 25 14:30 Gfft1122.mat
+-rw-r--r--  1 kulkarna ms4s86p 15930905 Jan 25 14:30 Gfft1123.mat
+-rw-r--r--  1 kulkarna ms4s86p 24004698 Jan 25 14:30 Gfft1131.mat
+-rw-r--r--  1 kulkarna ms4s86p 23775502 Jan 25 14:30 Gfft1132.mat
+-rw-r--r--  1 kulkarna ms4s86p 15873305 Jan 25 14:30 Gfft1133.mat
+-rw-r--r--  1 kulkarna ms4s86p 23860484 Jan 25 14:30 Gfft1211.mat
+-rw-r--r--  1 kulkarna ms4s86p 23751706 Jan 25 14:30 Gfft1212.mat
+-rw-r--r--  1 kulkarna ms4s86p 15890999 Jan 25 14:30 Gfft1213.mat
+-rw-r--r--  1 kulkarna ms4s86p 23715436 Jan 25 14:30 Gfft1221.mat
+-rw-r--r--  1 kulkarna ms4s86p 23954999 Jan 25 14:30 Gfft1222.mat
+-rw-r--r--  1 kulkarna ms4s86p 16027285 Jan 25 14:30 Gfft1223.mat
+-rw-r--r--  1 kulkarna ms4s86p 23774172 Jan 25 14:30 Gfft1231.mat
+-rw-r--r--  1 kulkarna ms4s86p 23978281 Jan 25 14:30 Gfft1232.mat
+-rw-r--r--  1 kulkarna ms4s86p 16032250 Jan 25 14:30 Gfft1233.mat
+-rw-r--r--  1 kulkarna ms4s86p 15984489 Jan 25 14:30 Gfft1311.mat
+-rw-r--r--  1 kulkarna ms4s86p 15890898 Jan 25 14:30 Gfft1312.mat
+-rw-r--r--  1 kulkarna ms4s86p 15897179 Jan 25 14:30 Gfft1313.mat
+-rw-r--r--  1 kulkarna ms4s86p 15927983 Jan 25 14:30 Gfft1321.mat
+-rw-r--r--  1 kulkarna ms4s86p 16025923 Jan 25 14:30 Gfft1322.mat
+-rw-r--r--  1 kulkarna ms4s86p 16033510 Jan 25 14:30 Gfft1323.mat
+-rw-r--r--  1 kulkarna ms4s86p 15873771 Jan 25 14:30 Gfft1331.mat
+-rw-r--r--  1 kulkarna ms4s86p 16032499 Jan 25 14:30 Gfft1332.mat
+-rw-r--r--  1 kulkarna ms4s86p 16049501 Jan 25 14:30 Gfft1333.mat
+-rw-r--r--  1 kulkarna ms4s86p 24080285 Jan 25 14:30 Gfft2111.mat
+-rw-r--r--  1 kulkarna ms4s86p 23714933 Jan 25 14:30 Gfft2112.mat
+-rw-r--r--  1 kulkarna ms4s86p 15928425 Jan 25 14:30 Gfft2113.mat
+-rw-r--r--  1 kulkarna ms4s86p 23779875 Jan 25 14:30 Gfft2121.mat
+-rw-r--r--  1 kulkarna ms4s86p 23883179 Jan 25 14:30 Gfft2122.mat
+-rw-r--r--  1 kulkarna ms4s86p 15992855 Jan 25 14:30 Gfft2123.mat
+-rw-r--r--  1 kulkarna ms4s86p 23883296 Jan 25 14:30 Gfft2131.mat
+-rw-r--r--  1 kulkarna ms4s86p 23907365 Jan 25 14:30 Gfft2132.mat
+-rw-r--r--  1 kulkarna ms4s86p 15988754 Jan 25 14:30 Gfft2133.mat
+-rw-r--r--  1 kulkarna ms4s86p 23712227 Jan 25 14:30 Gfft2211.mat
+-rw-r--r--  1 kulkarna ms4s86p 23953761 Jan 25 14:30 Gfft2212.mat
+-rw-r--r--  1 kulkarna ms4s86p 16026498 Jan 25 14:30 Gfft2213.mat
+-rw-r--r--  1 kulkarna ms4s86p 23883681 Jan 25 14:30 Gfft2221.mat
+-rw-r--r--  1 kulkarna ms4s86p 23302053 Jan 25 14:30 Gfft2222.mat
+-rw-r--r--  1 kulkarna ms4s86p 15602317 Jan 25 14:30 Gfft2223.mat
+-rw-r--r--  1 kulkarna ms4s86p 23905551 Jan 25 14:30 Gfft2231.mat
+-rw-r--r--  1 kulkarna ms4s86p 23818938 Jan 25 14:30 Gfft2232.mat
+-rw-r--r--  1 kulkarna ms4s86p 15910079 Jan 25 14:30 Gfft2233.mat
+-rw-r--r--  1 kulkarna ms4s86p 15931163 Jan 25 14:30 Gfft2311.mat
+-rw-r--r--  1 kulkarna ms4s86p 16027501 Jan 25 14:30 Gfft2312.mat
+-rw-r--r--  1 kulkarna ms4s86p 16034338 Jan 25 14:30 Gfft2313.mat
+-rw-r--r--  1 kulkarna ms4s86p 15992739 Jan 25 14:30 Gfft2321.mat
+-rw-r--r--  1 kulkarna ms4s86p 15602390 Jan 25 14:30 Gfft2322.mat
+-rw-r--r--  1 kulkarna ms4s86p 15605947 Jan 25 14:30 Gfft2323.mat
+-rw-r--r--  1 kulkarna ms4s86p 15989426 Jan 25 14:30 Gfft2331.mat
+-rw-r--r--  1 kulkarna ms4s86p 15914593 Jan 25 14:30 Gfft2332.mat
+-rw-r--r--  1 kulkarna ms4s86p 15925211 Jan 25 14:30 Gfft2333.mat
+-rw-r--r--  1 kulkarna ms4s86p 24005652 Jan 25 14:30 Gfft3111.mat
+-rw-r--r--  1 kulkarna ms4s86p 23773905 Jan 25 14:30 Gfft3112.mat
+-rw-r--r--  1 kulkarna ms4s86p 15874060 Jan 25 14:30 Gfft3113.mat
+-rw-r--r--  1 kulkarna ms4s86p 23884037 Jan 25 14:30 Gfft3121.mat
+-rw-r--r--  1 kulkarna ms4s86p 23906281 Jan 25 14:30 Gfft3122.mat
+-rw-r--r--  1 kulkarna ms4s86p 15989670 Jan 25 14:30 Gfft3123.mat
+-rw-r--r--  1 kulkarna ms4s86p 23705091 Jan 25 14:30 Gfft3131.mat
+-rw-r--r--  1 kulkarna ms4s86p 23778046 Jan 25 14:30 Gfft3132.mat
+-rw-r--r--  1 kulkarna ms4s86p 15936070 Jan 25 14:30 Gfft3133.mat
+-rw-r--r--  1 kulkarna ms4s86p 23775450 Jan 25 14:30 Gfft3211.mat
+-rw-r--r--  1 kulkarna ms4s86p 23980170 Jan 25 14:30 Gfft3212.mat
+-rw-r--r--  1 kulkarna ms4s86p 16032851 Jan 25 14:30 Gfft3213.mat
+-rw-r--r--  1 kulkarna ms4s86p 23908511 Jan 25 14:30 Gfft3221.mat
+-rw-r--r--  1 kulkarna ms4s86p 23819518 Jan 25 14:30 Gfft3222.mat
+-rw-r--r--  1 kulkarna ms4s86p 15914484 Jan 25 14:30 Gfft3223.mat
+-rw-r--r--  1 kulkarna ms4s86p 23777939 Jan 25 14:30 Gfft3231.mat
+-rw-r--r--  1 kulkarna ms4s86p 23453243 Jan 25 14:30 Gfft3232.mat
+-rw-r--r--  1 kulkarna ms4s86p 15633916 Jan 25 14:30 Gfft3233.mat
+-rw-r--r--  1 kulkarna ms4s86p 15873566 Jan 25 14:30 Gfft3311.mat
+-rw-r--r--  1 kulkarna ms4s86p 16031995 Jan 25 14:30 Gfft3312.mat
+-rw-r--r--  1 kulkarna ms4s86p 16049455 Jan 25 14:30 Gfft3313.mat
+-rw-r--r--  1 kulkarna ms4s86p 15988881 Jan 25 14:30 Gfft3321.mat
+-rw-r--r--  1 kulkarna ms4s86p 15909842 Jan 25 14:30 Gfft3322.mat
+-rw-r--r--  1 kulkarna ms4s86p 15925297 Jan 25 14:30 Gfft3323.mat
+-rw-r--r--  1 kulkarna ms4s86p 15935758 Jan 25 14:30 Gfft3331.mat
+-rw-r--r--  1 kulkarna ms4s86p 15633868 Jan 25 14:30 Gfft3332.mat
+-rw-r--r--  1 kulkarna ms4s86p 15645819 Jan 25 14:30 Gfft3333.mat
+-rw-r--r--  1 kulkarna ms4s86p      909 Jan 25 14:30 init.mat
+-rw-r--r--  1 kulkarna ms4s86p        0 Jan 25 14:30 sfield.out
+-rw-r--r--  1 kulkarna ms4s86p        0 Jan 25 14:30 elfield.out
+-rw-r--r--  1 kulkarna ms4s86p        0 Jan 25 14:30 efield.out
+-rw-r--r--  1 kulkarna ms4s86p        0 Jan 25 14:30 dfield.out
+-rw-r--r--  1 kulkarna ms4s86p     1232 Jan 25 14:30 c0initial.out
+-rw-r--r--  1 kulkarna ms4s86p       37 Jan 25 14:30 nn.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10111.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10112.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10113.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10121.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10122.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10123.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10131.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10132.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10133.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10211.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10212.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10213.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10221.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10222.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10223.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10231.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10232.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10233.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10311.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10312.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10313.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10321.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10322.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10323.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10331.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10332.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10333.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10411.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10412.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10413.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10421.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10422.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10423.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10431.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10432.out
+-rw-r--r--  1 kulkarna ms4s86p   262144 Jan 25 14:30 SG10433.out
+-rw-r--r--  1 kulkarna ms4s86p   147460 Jan 25 14:34 WC10111.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10112.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10113.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10121.out
+-rw-r--r--  1 kulkarna ms4s86p   147492 Jan 25 14:34 WC10122.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10123.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10131.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10132.out
+-rw-r--r--  1 kulkarna ms4s86p   163840 Jan 25 14:34 WC10133.out
+-rw-r--r--  1 kulkarna ms4s86p   147460 Jan 25 14:34 WC10211.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10212.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10213.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10221.out
+-rw-r--r--  1 kulkarna ms4s86p   147492 Jan 25 14:34 WC10222.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10223.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10231.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10232.out
+-rw-r--r--  1 kulkarna ms4s86p   163840 Jan 25 14:34 WC10233.out
+-rw-r--r--  1 kulkarna ms4s86p   147460 Jan 25 14:34 WC10311.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10312.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10313.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10321.out
+-rw-r--r--  1 kulkarna ms4s86p   147492 Jan 25 14:34 WC10322.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10323.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10331.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10332.out
+-rw-r--r--  1 kulkarna ms4s86p   163840 Jan 25 14:34 WC10333.out
+-rw-r--r--  1 kulkarna ms4s86p   147460 Jan 25 14:34 WC10411.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10412.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10413.out
+-rw-r--r--  1 kulkarna ms4s86p   159564 Jan 25 14:34 WC10421.out
+-rw-r--r--  1 kulkarna ms4s86p   147492 Jan 25 14:34 WC10422.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10423.out
+-rw-r--r--  1 kulkarna ms4s86p   151068 Jan 25 14:34 WC10431.out
+-rw-r--r--  1 kulkarna ms4s86p   154716 Jan 25 14:34 WC10432.out
+-rw-r--r--  1 kulkarna ms4s86p   163840 Jan 25 14:34 WC10433.out
+-rw-r--r--  1 kulkarna ms4s86p      361 Jan 25 14:34 strain.out
+-rw-r--r--  1 kulkarna ms4s86p      420 Jan 25 14:34 fort.25
+-rw-r--r--  1 kulkarna ms4s86p 81133929 Jan 25 14:34 cg.out
+-rw-r--r--  1 kulkarna ms4s86p    23408 Jan 25 14:34 s0.out
+-rw-r--r--  1 kulkarna ms4s86p      737 Jan 25 14:34 err.out
+-rw-r--r--  1 kulkarna ms4s86p       72 Jan 25 14:34 vm.out
+-rw-r--r--  1 kulkarna ms4s86p      288 Jan 25 14:34 fort.56
+-rw-r--r--  1 kulkarna ms4s86p  4325499 Jan 25 14:34 tex.out
+drwxr-xr-x 49 kulkarna ms4s86p     4096 Jan 25 14:34 felix-cache
+-rw-r--r--  1 kulkarna ms4s86p  3488082 Jan 25 14:35 p128_2grain.mat
++ cd /local/2233821
++ cp -r window_only.2233821 /pylon5/ms4s86p/kulkarna/window_only

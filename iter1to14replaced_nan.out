@@ -1,0 +1,7826 @@
++ INPUTDIR_BASE=/pylon5/ms4s86p/kulkarna
++ PROB=window_only
++ WORKDIR_BASE=/local/2234889
++ hostname
+l003.pvt.bridges.psc.edu
++ scontrol show job 2234889
++ grep mem
+   TRES=cpu=3,mem=128G,node=1
++ cd /pylon5/ms4s86p/kulkarna/window_only
++ module load matlab
+++ /usr/bin/modulecmd bash load matlab
++ eval LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a ';export' 'LOADEDMODULES;MATLABROOT=/opt/packages/matlab/R2017a' ';export' 'MATLABROOT;PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin' ';export' 'PATH;_LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a' ';export' '_LMFILES_;'
+++ LOADEDMODULES=psc_path/1.1:slurm/17.02.5:intel/17.4:matlab/R2017a
+++ export LOADEDMODULES
+++ MATLABROOT=/opt/packages/matlab/R2017a
+++ export MATLABROOT
+++ PATH=/opt/packages/matlab/R2017a/bin:/home/anirban/bin:/usr/lib64/qt-3.3/bin:/opt/intel/advisor_2017.1.3.510716/bin64:/opt/intel/vtune_amplifier_xe_2017.3.0.510739/bin64:/opt/intel/inspector_2017.1.3.510645/bin64:/opt/intel/itac/2017.3.030/intel64/bin:/opt/intel//itac/2017.3.030/intel64/bin:/opt/intel//clck/2017.2.019/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.4.196/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/packages/slurm/17.02.5/bin:/opt/packages/allocations:/opt/packages/interact/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/puppet/bin:/opt/packages/slash2/psc/sbin:/opt/intel/parallel_studio_xe_2017.4.056/bin:/opt/puppetlabs/bin:/home/kulkarna/.local/bin:/home/kulkarna/bin
+++ export PATH
+++ _LMFILES_=/opt/modulefiles/psc_path/1.1:/opt/modulefiles/slurm/17.02.5:/opt/modulefiles/intel/17.4:/opt/modulefiles/matlab/R2017a
+++ export _LMFILES_
++ ifort -mcmodel medium -shared-intel -o p128.exe fewIterSymm.f
+fewIterSymm.f(626): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+101   format(i3,4(1x,e10.4),10(1x,F7.4))
+----------------------^
++ WORKDIR=/local/2234889/window_only.2234889
++ mkdir -p /local/2234889/window_only.2234889
++ cp p128.exe /local/2234889/window_only.2234889
++ cp fft.dim fft.in /local/2234889/window_only.2234889
++ cp cuel2.sx cupl2.sx /local/2234889/window_only.2234889
++ cp sq128_symmgrain.FFT /local/2234889/window_only.2234889
++ cp compress_update_pipeline2d.m compute_full_gamma.m compute_gamma_ds1111.m compute_gamma_ds_specific.m compute_gamma_fft.m fast.m get_stress.m main.m matlab_main_final.m model_after_conv.m model_before_tx.m MS_cij2cijkl.m MS_cijkl2cij.m old_fast.m read_cg.m /local/2234889/window_only.2234889
++ cp avgcg.mat Gfft1111.mat Gfft1112.mat Gfft1113.mat Gfft1121.mat Gfft1122.mat Gfft1123.mat Gfft1131.mat Gfft1132.mat Gfft1133.mat Gfft1211.mat Gfft1212.mat Gfft1213.mat Gfft1221.mat Gfft1222.mat Gfft1223.mat Gfft1231.mat Gfft1232.mat Gfft1233.mat Gfft1311.mat Gfft1312.mat Gfft1313.mat Gfft1321.mat Gfft1322.mat Gfft1323.mat Gfft1331.mat Gfft1332.mat Gfft1333.mat Gfft2111.mat Gfft2112.mat Gfft2113.mat Gfft2121.mat Gfft2122.mat Gfft2123.mat Gfft2131.mat Gfft2132.mat Gfft2133.mat Gfft2211.mat Gfft2212.mat Gfft2213.mat Gfft2221.mat Gfft2222.mat Gfft2223.mat Gfft2231.mat Gfft2232.mat Gfft2233.mat Gfft2311.mat Gfft2312.mat Gfft2313.mat Gfft2321.mat Gfft2322.mat Gfft2323.mat Gfft2331.mat Gfft2332.mat Gfft2333.mat Gfft3111.mat Gfft3112.mat Gfft3113.mat Gfft3121.mat Gfft3122.mat Gfft3123.mat Gfft3131.mat Gfft3132.mat Gfft3133.mat Gfft3211.mat Gfft3212.mat Gfft3213.mat Gfft3221.mat Gfft3222.mat Gfft3223.mat Gfft3231.mat Gfft3232.mat Gfft3233.mat Gfft3311.mat Gfft3312.mat Gfft3313.mat Gfft3321.mat Gfft3322.mat Gfft3323.mat Gfft3331.mat Gfft3332.mat Gfft3333.mat init.mat /local/2234889/window_only.2234889
++ cd /local/2234889/window_only.2234889
++ ls -al
+total 1540952
+drwxr-xr-x 2 kulkarna ms4s86p     4096 Jan 26 09:31 .
+drwxr-xr-x 3 kulkarna ms4s86p       40 Jan 26 09:31 ..
+-rw-r--r-- 1 kulkarna ms4s86p      478 Jan 26 09:31 avgcg.mat
+-rw-r--r-- 1 kulkarna ms4s86p     5397 Jan 26 09:31 compress_update_pipeline2d.m
+-rw-r--r-- 1 kulkarna ms4s86p      907 Jan 26 09:31 compute_full_gamma.m
+-rw-r--r-- 1 kulkarna ms4s86p      597 Jan 26 09:31 compute_gamma_ds1111.m
+-rw-r--r-- 1 kulkarna ms4s86p      649 Jan 26 09:31 compute_gamma_ds_specific.m
+-rw-r--r-- 1 kulkarna ms4s86p     1469 Jan 26 09:31 compute_gamma_fft.m
+-rw-r--r-- 1 kulkarna ms4s86p      458 Jan 26 09:31 cuel2.sx
+-rw-r--r-- 1 kulkarna ms4s86p      930 Jan 26 09:31 cupl2.sx
+-rw-r--r-- 1 kulkarna ms4s86p     2851 Jan 26 09:31 fast.m
+-rw-r--r-- 1 kulkarna ms4s86p     3130 Jan 26 09:31 fft.dim
+-rw-r--r-- 1 kulkarna ms4s86p     2674 Jan 26 09:31 fft.in
+-rw-r--r-- 1 kulkarna ms4s86p     5364 Jan 26 09:31 get_stress.m
+-rw-r--r-- 1 kulkarna ms4s86p 23456757 Jan 26 09:31 Gfft1111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860740 Jan 26 09:31 Gfft1112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984756 Jan 26 09:31 Gfft1113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080960 Jan 26 09:31 Gfft1121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712879 Jan 26 09:31 Gfft1122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15930905 Jan 26 09:31 Gfft1123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24004698 Jan 26 09:31 Gfft1131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775502 Jan 26 09:31 Gfft1132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873305 Jan 26 09:31 Gfft1133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860484 Jan 26 09:31 Gfft1211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23751706 Jan 26 09:31 Gfft1212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890999 Jan 26 09:31 Gfft1213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23715436 Jan 26 09:31 Gfft1221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23954999 Jan 26 09:31 Gfft1222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027285 Jan 26 09:31 Gfft1223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23774172 Jan 26 09:31 Gfft1231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23978281 Jan 26 09:31 Gfft1232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032250 Jan 26 09:31 Gfft1233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984489 Jan 26 09:31 Gfft1311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890898 Jan 26 09:31 Gfft1312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15897179 Jan 26 09:31 Gfft1313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15927983 Jan 26 09:31 Gfft1321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16025923 Jan 26 09:31 Gfft1322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16033510 Jan 26 09:31 Gfft1323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873771 Jan 26 09:31 Gfft1331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032499 Jan 26 09:31 Gfft1332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049501 Jan 26 09:31 Gfft1333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080285 Jan 26 09:31 Gfft2111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23714933 Jan 26 09:31 Gfft2112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15928425 Jan 26 09:31 Gfft2113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23779875 Jan 26 09:31 Gfft2121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883179 Jan 26 09:31 Gfft2122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992855 Jan 26 09:31 Gfft2123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883296 Jan 26 09:31 Gfft2131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23907365 Jan 26 09:31 Gfft2132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988754 Jan 26 09:31 Gfft2133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712227 Jan 26 09:31 Gfft2211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23953761 Jan 26 09:31 Gfft2212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16026498 Jan 26 09:31 Gfft2213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883681 Jan 26 09:31 Gfft2221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23302053 Jan 26 09:31 Gfft2222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602317 Jan 26 09:31 Gfft2223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23905551 Jan 26 09:31 Gfft2231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23818938 Jan 26 09:31 Gfft2232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15910079 Jan 26 09:31 Gfft2233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15931163 Jan 26 09:31 Gfft2311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027501 Jan 26 09:31 Gfft2312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16034338 Jan 26 09:31 Gfft2313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992739 Jan 26 09:31 Gfft2321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602390 Jan 26 09:31 Gfft2322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15605947 Jan 26 09:31 Gfft2323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989426 Jan 26 09:31 Gfft2331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914593 Jan 26 09:31 Gfft2332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925211 Jan 26 09:31 Gfft2333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24005652 Jan 26 09:31 Gfft3111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23773905 Jan 26 09:31 Gfft3112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15874060 Jan 26 09:31 Gfft3113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23884037 Jan 26 09:31 Gfft3121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23906281 Jan 26 09:31 Gfft3122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989670 Jan 26 09:31 Gfft3123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23705091 Jan 26 09:31 Gfft3131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23778046 Jan 26 09:31 Gfft3132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15936070 Jan 26 09:31 Gfft3133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775450 Jan 26 09:31 Gfft3211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23980170 Jan 26 09:31 Gfft3212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032851 Jan 26 09:31 Gfft3213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23908511 Jan 26 09:31 Gfft3221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23819518 Jan 26 09:31 Gfft3222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914484 Jan 26 09:31 Gfft3223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23777939 Jan 26 09:31 Gfft3231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23453243 Jan 26 09:31 Gfft3232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633916 Jan 26 09:31 Gfft3233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873566 Jan 26 09:31 Gfft3311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16031995 Jan 26 09:31 Gfft3312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049455 Jan 26 09:31 Gfft3313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988881 Jan 26 09:31 Gfft3321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15909842 Jan 26 09:31 Gfft3322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925297 Jan 26 09:31 Gfft3323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15935758 Jan 26 09:31 Gfft3331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633868 Jan 26 09:31 Gfft3332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15645819 Jan 26 09:31 Gfft3333.mat
+-rw-r--r-- 1 kulkarna ms4s86p      909 Jan 26 09:31 init.mat
+-rw-r--r-- 1 kulkarna ms4s86p     2874 Jan 26 09:31 main.m
+-rw-r--r-- 1 kulkarna ms4s86p     2862 Jan 26 09:31 matlab_main_final.m
+-rw-r--r-- 1 kulkarna ms4s86p     1947 Jan 26 09:31 model_after_conv.m
+-rw-r--r-- 1 kulkarna ms4s86p     1907 Jan 26 09:31 model_before_tx.m
+-rw-r--r-- 1 kulkarna ms4s86p     4898 Jan 26 09:31 MS_cij2cijkl.m
+-rw-r--r-- 1 kulkarna ms4s86p     3419 Jan 26 09:31 MS_cijkl2cij.m
+-rw-r--r-- 1 kulkarna ms4s86p     3746 Jan 26 09:31 old_fast.m
+-rwxr-xr-x 1 kulkarna ms4s86p   197328 Jan 26 09:31 p128.exe
+-rw-r--r-- 1 kulkarna ms4s86p      795 Jan 26 09:31 read_cg.m
+-rw-r--r-- 1 kulkarna ms4s86p  3637248 Jan 26 09:31 sq128_symmgrain.FFT
++ ./p128.exe
+   1.000000    
+ ***************************************************
+ STEP =            1
+ in  loop
+ writing...
+ ITER =            0
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 164.223669 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.780648 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  8.5821752E-11
+ ERRS=   1.057929    
+ DDISGRADMACRO(1,1),(2,2)=  9.3521876E-06  1.5574482E-05
+ STRAIN FIELD ERROR =  1.7164349E-06
+ STRESS FIELD ERROR =  0.1291870    
+ in  loop
+ writing...
+ ITER =            1
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 167.800998 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.322604 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  4.8425280E-10
+ ERRS=   38.70077    
+ DDISGRADMACRO(1,1),(2,2)= -7.6823189E-06 -4.5663628E-06
+ STRAIN FIELD ERROR =  9.6850554E-06
+ STRESS FIELD ERROR =   5.988467    
+ in  loop
+ writing...
+ ITER =            2
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 163.111189 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.342691 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  4.3271695E-11
+ ERRS=  0.6559868    
+ DDISGRADMACRO(1,1),(2,2)= -5.3825006E-06 -7.7599998E-06
+ STRAIN FIELD ERROR =  8.6543378E-07
+ STRESS FIELD ERROR =  0.1064834    
+ in  loop
+ writing...
+ ITER =            3
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 162.140282 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.284546 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  7.6992371E-11
+ ERRS=   9.858503    
+ DDISGRADMACRO(1,1),(2,2)=  4.6968680E-06  8.4492615E-07
+ STRAIN FIELD ERROR =  1.5398472E-06
+ STRESS FIELD ERROR =   1.467600    
+ in  loop
+ writing...
+ ITER =            4
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 163.905317 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.571615 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  1.3806354E-11
+ ERRS=  0.2708760    
+ DDISGRADMACRO(1,1),(2,2)=  3.5934331E-06  3.2561941E-06
+ STRAIN FIELD ERROR =  2.7612705E-07
+ STRESS FIELD ERROR =  3.9878193E-02
+ in  loop
+ writing...
+ ITER =            5
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 166.762322 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.686403 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.3229663E-11
+ ERRS=   2.397273    
+ DDISGRADMACRO(1,1),(2,2)= -2.2715492E-06 -7.2617638E-08
+ STRAIN FIELD ERROR =  4.6459320E-07
+ STRESS FIELD ERROR =  0.3670207    
+ in  loop
+ writing...
+ ITER =            6
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 167.347666 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.456756 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.4741426E-12
+ ERRS=  7.6556727E-02
+ DDISGRADMACRO(1,1),(2,2)= -2.1584101E-06 -1.2239158E-06
+ STRAIN FIELD ERROR =  4.9482846E-08
+ STRESS FIELD ERROR =  1.1756117E-02
+ in  loop
+ writing...
+ ITER =            7
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 163.638843 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.721817 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  4.7349453E-04
+ ERRS=  0.5607349    
+ DDISGRADMACRO(1,1),(2,2)=  1.0108956E-06  5.3494006E-08
+ STRAIN FIELD ERROR =   9.469890    
+ STRESS FIELD ERROR =  8.4080294E-02
+ in  loop
+ writing...
+ ITER =            8
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 171.817262 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.821935 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  2.3997370E-02
+ ERRS=  2.5953408E-02
+ DDISGRADMACRO(1,1),(2,2)=  1.2459971E-06  4.3653486E-07
+ STRAIN FIELD ERROR =   479.9474    
+ STRESS FIELD ERROR =  3.8766600E-03
+ in  loop
+ writing...
+ ITER =            9
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 168.037047 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.755019 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  5.8919352E-02
+ ERRS=  0.1564176    
+ DDISGRADMACRO(1,1),(2,2)= -3.8832789E-07 -1.2262498E-07
+ STRAIN FIELD ERROR =   1178.387    
+ STRESS FIELD ERROR =  2.3623999E-02
+ in  loop
+ writing...
+ ITER =           10
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 170.289402 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 6.153260 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  0.1128443    
+ ERRS=  2.9018171E-02
+ DDISGRADMACRO(1,1),(2,2)= -6.8660637E-07 -1.8094349E-07
+ STRAIN FIELD ERROR =   2256.885    
+ STRESS FIELD ERROR =  4.3947725E-03
+ in  loop
+ writing...
+ ITER =           11
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 171.660529 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 6.043550 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=  0.4177345    
+ ERRS=  4.5518346E-02
+ DDISGRADMACRO(1,1),(2,2)=  9.9720850E-08  1.3638376E-07
+ STRAIN FIELD ERROR =   8354.689    
+ STRESS FIELD ERROR =  6.8638180E-03
+ in  loop
+ writing...
+ ITER =           12
+ DIRECT FFT OF STRESS FIELD
+ CALCULATING G^pq,ij : SG^ij ...
+ INVERSE FFT TO GET STRAIN FIELD
+ writing sg components for this iteration...
+           1
+           2
+           3
+           4
+ matlab -nojvm -r "infile='SG10433.out';fast"
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+ei =
+
+     1
+
+
+ej =
+
+     1
+
+
+ei =
+
+     1
+
+
+ej =
+
+     2
+
+
+ei =
+
+     1
+
+
+ej =
+
+     3
+
+
+ei =
+
+     2
+
+
+ej =
+
+     1
+
+
+ei =
+
+     2
+
+
+ej =
+
+     2
+
+
+ei =
+
+     2
+
+
+ej =
+
+     3
+
+
+ei =
+
+     3
+
+
+ej =
+
+     1
+
+
+ei =
+
+     3
+
+
+ej =
+
+     2
+
+
+ei =
+
+     3
+
+
+ej =
+
+     3
+
+Elapsed time is 171.821397 seconds.
+writing
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+
+i =
+
+     1
+
+
+j =
+
+     1
+
+
+i =
+
+     1
+
+
+j =
+
+     2
+
+
+i =
+
+     1
+
+
+j =
+
+     3
+
+
+i =
+
+     2
+
+
+j =
+
+     1
+
+
+i =
+
+     2
+
+
+j =
+
+     2
+
+
+i =
+
+     2
+
+
+j =
+
+     3
+
+
+i =
+
+     3
+
+
+j =
+
+     1
+
+
+i =
+
+     3
+
+
+j =
+
+     2
+
+
+i =
+
+     3
+
+
+j =
+
+     3
+
+Elapsed time is 5.859039 seconds.
+ read approx
+ WC10111.out
+ WC10111.out
+ WC10112.out
+ WC10112.out
+ WC10113.out
+ WC10113.out
+ WC10121.out
+ WC10121.out
+ WC10122.out
+ WC10122.out
+ WC10123.out
+ WC10123.out
+ WC10131.out
+ WC10131.out
+ WC10132.out
+ WC10132.out
+ WC10133.out
+ WC10133.out
+ WC10211.out
+ WC10211.out
+ WC10212.out
+ WC10212.out
+ WC10213.out
+ WC10213.out
+ WC10221.out
+ WC10221.out
+ WC10222.out
+ WC10222.out
+ WC10223.out
+ WC10223.out
+ WC10231.out
+ WC10231.out
+ WC10232.out
+ WC10232.out
+ WC10233.out
+ WC10233.out
+ WC10311.out
+ WC10311.out
+ WC10312.out
+ WC10312.out
+ WC10313.out
+ WC10313.out
+ WC10321.out
+ WC10321.out
+ WC10322.out
+ WC10322.out
+ WC10323.out
+ WC10323.out
+ WC10331.out
+ WC10331.out
+ WC10332.out
+ WC10332.out
+ WC10333.out
+ WC10333.out
+ WC10411.out
+ WC10411.out
+ WC10412.out
+ WC10412.out
+ WC10413.out
+ WC10413.out
+ WC10421.out
+ WC10421.out
+ WC10422.out
+ WC10422.out
+ WC10423.out
+ WC10423.out
+ WC10431.out
+ WC10431.out
+ WC10432.out
+ WC10432.out
+ WC10433.out
+ WC10433.out
+ read wc
+ put in data
+ end if statemnt
+ UPDATE STRESS FIELD
+ 
+ ERRE=            NaN
+ ERRS=            NaN
+ DDISGRADMACRO(1,1),(2,2)=            NaN            NaN
+ STRAIN FIELD ERROR =            NaN
+ STRESS FIELD ERROR =            NaN
+ disgradmacro(1,1),disgradmacro(2,2),disgradmacro(3,3)
+            NaN            NaN  4.9999999E-05
+ disgradmacro(1,1)/disgradmacro(3,3)
+            NaN
+ scauav1(1,1),scauav1(2,2),scauav1(3,3)
+            NaN            NaN            NaN
+ 
+ AVERAGE PLASTIC ROTATION =            NaN
+ AVERAGE LOCAL ROTATION =  0.0000000E+00
+ 
++ matlab -nodisplay
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> Exception in thread "AWT-EventQueue-0" java.lang.RuntimeException: std::exception for "matlab.workingfolder.LastFolderPath": fl:filesystem:SystemError
+	at com.mathworks.services.settings.Setting.nativeSet(Native Method)
+	at com.mathworks.services.settings.Setting.set(Setting.java:913)
+	at com.mathworks.services.settings.Setting.set(Setting.java:769)
+	at com.mathworks.services.settings.Setting.set(Setting.java:709)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder.setStringSettingValue(InitialWorkingFolder.java:50)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder.access$000(InitialWorkingFolder.java:15)
+	at com.mathworks.mlwidgets.prefs.InitialWorkingFolder$1.actionPerformed(InitialWorkingFolder.java:34)
+	at com.mathworks.jmi.MatlabPath$DeferredActionEvent.dispatch(MatlabPath.java:152)
+	at com.mathworks.util.QueueEvent$QueueTarget.processEvent(QueueEvent.java:89)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$200(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+>> >> >> >> >> >> >> getting stress
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> 
+filename =
+
+    'SG10111.out'
+
+
+filename =
+
+    'SG10211.out'
+
+
+filename =
+
+    'SG10311.out'
+
+
+filename =
+
+    'SG10411.out'
+
+
+filename =
+
+    'SG10112.out'
+
+
+filename =
+
+    'SG10212.out'
+
+
+filename =
+
+    'SG10312.out'
+
+
+filename =
+
+    'SG10412.out'
+
+
+filename =
+
+    'SG10113.out'
+
+
+filename =
+
+    'SG10213.out'
+
+
+filename =
+
+    'SG10313.out'
+
+
+filename =
+
+    'SG10413.out'
+
+
+filename =
+
+    'SG10121.out'
+
+
+filename =
+
+    'SG10221.out'
+
+
+filename =
+
+    'SG10321.out'
+
+
+filename =
+
+    'SG10421.out'
+
+
+filename =
+
+    'SG10122.out'
+
+
+filename =
+
+    'SG10222.out'
+
+
+filename =
+
+    'SG10322.out'
+
+
+filename =
+
+    'SG10422.out'
+
+
+filename =
+
+    'SG10123.out'
+
+
+filename =
+
+    'SG10223.out'
+
+
+filename =
+
+    'SG10323.out'
+
+
+filename =
+
+    'SG10423.out'
+
+
+filename =
+
+    'SG10131.out'
+
+
+filename =
+
+    'SG10231.out'
+
+
+filename =
+
+    'SG10331.out'
+
+
+filename =
+
+    'SG10431.out'
+
+
+filename =
+
+    'SG10132.out'
+
+
+filename =
+
+    'SG10232.out'
+
+
+filename =
+
+    'SG10332.out'
+
+
+filename =
+
+    'SG10432.out'
+
+
+filename =
+
+    'SG10133.out'
+
+
+filename =
+
+    'SG10233.out'
+
+
+filename =
+
+    'SG10333.out'
+
+
+filename =
+
+    'SG10433.out'
+
+>> >> >> >> + ls -ltr
+total 1642552
+-rwxr-xr-x 1 kulkarna ms4s86p   197328 Jan 26 09:31 p128.exe
+-rw-r--r-- 1 kulkarna ms4s86p     3130 Jan 26 09:31 fft.dim
+-rw-r--r-- 1 kulkarna ms4s86p     2674 Jan 26 09:31 fft.in
+-rw-r--r-- 1 kulkarna ms4s86p      458 Jan 26 09:31 cuel2.sx
+-rw-r--r-- 1 kulkarna ms4s86p      930 Jan 26 09:31 cupl2.sx
+-rw-r--r-- 1 kulkarna ms4s86p  3637248 Jan 26 09:31 sq128_symmgrain.FFT
+-rw-r--r-- 1 kulkarna ms4s86p     5397 Jan 26 09:31 compress_update_pipeline2d.m
+-rw-r--r-- 1 kulkarna ms4s86p      907 Jan 26 09:31 compute_full_gamma.m
+-rw-r--r-- 1 kulkarna ms4s86p      597 Jan 26 09:31 compute_gamma_ds1111.m
+-rw-r--r-- 1 kulkarna ms4s86p      649 Jan 26 09:31 compute_gamma_ds_specific.m
+-rw-r--r-- 1 kulkarna ms4s86p     1469 Jan 26 09:31 compute_gamma_fft.m
+-rw-r--r-- 1 kulkarna ms4s86p     2851 Jan 26 09:31 fast.m
+-rw-r--r-- 1 kulkarna ms4s86p     5364 Jan 26 09:31 get_stress.m
+-rw-r--r-- 1 kulkarna ms4s86p     2874 Jan 26 09:31 main.m
+-rw-r--r-- 1 kulkarna ms4s86p     2862 Jan 26 09:31 matlab_main_final.m
+-rw-r--r-- 1 kulkarna ms4s86p     1947 Jan 26 09:31 model_after_conv.m
+-rw-r--r-- 1 kulkarna ms4s86p     1907 Jan 26 09:31 model_before_tx.m
+-rw-r--r-- 1 kulkarna ms4s86p     4898 Jan 26 09:31 MS_cij2cijkl.m
+-rw-r--r-- 1 kulkarna ms4s86p     3419 Jan 26 09:31 MS_cijkl2cij.m
+-rw-r--r-- 1 kulkarna ms4s86p     3746 Jan 26 09:31 old_fast.m
+-rw-r--r-- 1 kulkarna ms4s86p      795 Jan 26 09:31 read_cg.m
+-rw-r--r-- 1 kulkarna ms4s86p      478 Jan 26 09:31 avgcg.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23456757 Jan 26 09:31 Gfft1111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860740 Jan 26 09:31 Gfft1112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984756 Jan 26 09:31 Gfft1113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080960 Jan 26 09:31 Gfft1121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712879 Jan 26 09:31 Gfft1122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15930905 Jan 26 09:31 Gfft1123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24004698 Jan 26 09:31 Gfft1131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775502 Jan 26 09:31 Gfft1132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873305 Jan 26 09:31 Gfft1133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23860484 Jan 26 09:31 Gfft1211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23751706 Jan 26 09:31 Gfft1212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890999 Jan 26 09:31 Gfft1213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23715436 Jan 26 09:31 Gfft1221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23954999 Jan 26 09:31 Gfft1222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027285 Jan 26 09:31 Gfft1223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23774172 Jan 26 09:31 Gfft1231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23978281 Jan 26 09:31 Gfft1232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032250 Jan 26 09:31 Gfft1233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15984489 Jan 26 09:31 Gfft1311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15890898 Jan 26 09:31 Gfft1312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15897179 Jan 26 09:31 Gfft1313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15927983 Jan 26 09:31 Gfft1321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16025923 Jan 26 09:31 Gfft1322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16033510 Jan 26 09:31 Gfft1323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873771 Jan 26 09:31 Gfft1331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032499 Jan 26 09:31 Gfft1332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049501 Jan 26 09:31 Gfft1333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24080285 Jan 26 09:31 Gfft2111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23714933 Jan 26 09:31 Gfft2112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15928425 Jan 26 09:31 Gfft2113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23779875 Jan 26 09:31 Gfft2121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883179 Jan 26 09:31 Gfft2122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992855 Jan 26 09:31 Gfft2123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883296 Jan 26 09:31 Gfft2131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23907365 Jan 26 09:31 Gfft2132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988754 Jan 26 09:31 Gfft2133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23712227 Jan 26 09:31 Gfft2211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23953761 Jan 26 09:31 Gfft2212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16026498 Jan 26 09:31 Gfft2213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23883681 Jan 26 09:31 Gfft2221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23302053 Jan 26 09:31 Gfft2222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602317 Jan 26 09:31 Gfft2223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23905551 Jan 26 09:31 Gfft2231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23818938 Jan 26 09:31 Gfft2232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15910079 Jan 26 09:31 Gfft2233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15931163 Jan 26 09:31 Gfft2311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16027501 Jan 26 09:31 Gfft2312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16034338 Jan 26 09:31 Gfft2313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15992739 Jan 26 09:31 Gfft2321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15602390 Jan 26 09:31 Gfft2322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15605947 Jan 26 09:31 Gfft2323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989426 Jan 26 09:31 Gfft2331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914593 Jan 26 09:31 Gfft2332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925211 Jan 26 09:31 Gfft2333.mat
+-rw-r--r-- 1 kulkarna ms4s86p 24005652 Jan 26 09:31 Gfft3111.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23773905 Jan 26 09:31 Gfft3112.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15874060 Jan 26 09:31 Gfft3113.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23884037 Jan 26 09:31 Gfft3121.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23906281 Jan 26 09:31 Gfft3122.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15989670 Jan 26 09:31 Gfft3123.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23705091 Jan 26 09:31 Gfft3131.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23778046 Jan 26 09:31 Gfft3132.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15936070 Jan 26 09:31 Gfft3133.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23775450 Jan 26 09:31 Gfft3211.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23980170 Jan 26 09:31 Gfft3212.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16032851 Jan 26 09:31 Gfft3213.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23908511 Jan 26 09:31 Gfft3221.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23819518 Jan 26 09:31 Gfft3222.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15914484 Jan 26 09:31 Gfft3223.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23777939 Jan 26 09:31 Gfft3231.mat
+-rw-r--r-- 1 kulkarna ms4s86p 23453243 Jan 26 09:31 Gfft3232.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633916 Jan 26 09:31 Gfft3233.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15873566 Jan 26 09:31 Gfft3311.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16031995 Jan 26 09:31 Gfft3312.mat
+-rw-r--r-- 1 kulkarna ms4s86p 16049455 Jan 26 09:31 Gfft3313.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15988881 Jan 26 09:31 Gfft3321.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15909842 Jan 26 09:31 Gfft3322.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15925297 Jan 26 09:31 Gfft3323.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15935758 Jan 26 09:31 Gfft3331.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15633868 Jan 26 09:31 Gfft3332.mat
+-rw-r--r-- 1 kulkarna ms4s86p 15645819 Jan 26 09:31 Gfft3333.mat
+-rw-r--r-- 1 kulkarna ms4s86p      909 Jan 26 09:31 init.mat
+-rw-r--r-- 1 kulkarna ms4s86p        0 Jan 26 09:31 sfield.out
+-rw-r--r-- 1 kulkarna ms4s86p        0 Jan 26 09:31 elfield.out
+-rw-r--r-- 1 kulkarna ms4s86p        0 Jan 26 09:31 efield.out
+-rw-r--r-- 1 kulkarna ms4s86p        0 Jan 26 09:31 dfield.out
+-rw-r--r-- 1 kulkarna ms4s86p     1232 Jan 26 09:31 c0initial.out
+-rw-r--r-- 1 kulkarna ms4s86p       37 Jan 26 09:31 nn.out
+-rw-r--r-- 1 kulkarna ms4s86p      247 Jan 26 10:08 strain.out
+-rw-r--r-- 1 kulkarna ms4s86p      294 Jan 26 10:08 fort.25
+-rw-r--r-- 1 kulkarna ms4s86p 81133815 Jan 26 10:08 cg.out
+-rw-r--r-- 1 kulkarna ms4s86p    16016 Jan 26 10:08 s0.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10111.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10112.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10113.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10121.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10122.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10123.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10131.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10132.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10133.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10211.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10212.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10213.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10221.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10222.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10223.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10231.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10232.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10233.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10311.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10312.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10313.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10321.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10322.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10323.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10331.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10332.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10333.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10411.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10412.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10413.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10421.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10422.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10423.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10431.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10432.out
+-rw-r--r-- 1 kulkarna ms4s86p   262144 Jan 26 10:08 SG10433.out
+-rw-r--r-- 1 kulkarna ms4s86p   147469 Jan 26 10:12 WC10111.out
+-rw-r--r-- 1 kulkarna ms4s86p   159417 Jan 26 10:12 WC10112.out
+-rw-r--r-- 1 kulkarna ms4s86p   151097 Jan 26 10:12 WC10113.out
+-rw-r--r-- 1 kulkarna ms4s86p   159427 Jan 26 10:12 WC10121.out
+-rw-r--r-- 1 kulkarna ms4s86p   147498 Jan 26 10:12 WC10122.out
+-rw-r--r-- 1 kulkarna ms4s86p   154567 Jan 26 10:12 WC10123.out
+-rw-r--r-- 1 kulkarna ms4s86p   151098 Jan 26 10:12 WC10131.out
+-rw-r--r-- 1 kulkarna ms4s86p   154569 Jan 26 10:12 WC10132.out
+-rw-r--r-- 1 kulkarna ms4s86p   163837 Jan 26 10:12 WC10133.out
+-rw-r--r-- 1 kulkarna ms4s86p   147470 Jan 26 10:12 WC10211.out
+-rw-r--r-- 1 kulkarna ms4s86p   159422 Jan 26 10:12 WC10212.out
+-rw-r--r-- 1 kulkarna ms4s86p   151087 Jan 26 10:12 WC10213.out
+-rw-r--r-- 1 kulkarna ms4s86p   159415 Jan 26 10:12 WC10221.out
+-rw-r--r-- 1 kulkarna ms4s86p   147510 Jan 26 10:12 WC10222.out
+-rw-r--r-- 1 kulkarna ms4s86p   154577 Jan 26 10:12 WC10223.out
+-rw-r--r-- 1 kulkarna ms4s86p   151085 Jan 26 10:12 WC10231.out
+-rw-r--r-- 1 kulkarna ms4s86p   154578 Jan 26 10:12 WC10232.out
+-rw-r--r-- 1 kulkarna ms4s86p   163837 Jan 26 10:12 WC10233.out
+-rw-r--r-- 1 kulkarna ms4s86p   147471 Jan 26 10:12 WC10311.out
+-rw-r--r-- 1 kulkarna ms4s86p   159428 Jan 26 10:12 WC10312.out
+-rw-r--r-- 1 kulkarna ms4s86p   151100 Jan 26 10:12 WC10313.out
+-rw-r--r-- 1 kulkarna ms4s86p   159419 Jan 26 10:12 WC10321.out
+-rw-r--r-- 1 kulkarna ms4s86p   147512 Jan 26 10:12 WC10322.out
+-rw-r--r-- 1 kulkarna ms4s86p   154575 Jan 26 10:12 WC10323.out
+-rw-r--r-- 1 kulkarna ms4s86p   151099 Jan 26 10:12 WC10331.out
+-rw-r--r-- 1 kulkarna ms4s86p   154572 Jan 26 10:12 WC10332.out
+-rw-r--r-- 1 kulkarna ms4s86p   163838 Jan 26 10:12 WC10333.out
+-rw-r--r-- 1 kulkarna ms4s86p   147468 Jan 26 10:12 WC10411.out
+-rw-r--r-- 1 kulkarna ms4s86p   159428 Jan 26 10:12 WC10412.out
+-rw-r--r-- 1 kulkarna ms4s86p   151096 Jan 26 10:12 WC10413.out
+-rw-r--r-- 1 kulkarna ms4s86p   159425 Jan 26 10:12 WC10421.out
+-rw-r--r-- 1 kulkarna ms4s86p   147504 Jan 26 10:12 WC10422.out
+-rw-r--r-- 1 kulkarna ms4s86p   154571 Jan 26 10:12 WC10423.out
+-rw-r--r-- 1 kulkarna ms4s86p   151096 Jan 26 10:12 WC10431.out
+-rw-r--r-- 1 kulkarna ms4s86p   154573 Jan 26 10:12 WC10432.out
+-rw-r--r-- 1 kulkarna ms4s86p   163838 Jan 26 10:12 WC10433.out
+-rw-r--r-- 1 kulkarna ms4s86p      515 Jan 26 10:12 err.out
+-rw-r--r-- 1 kulkarna ms4s86p       72 Jan 26 10:12 vm.out
+-rw-r--r-- 1 kulkarna ms4s86p      288 Jan 26 10:12 fort.56
+-rw-r--r-- 1 kulkarna ms4s86p  4325499 Jan 26 10:12 tex.out
+-rw-r--r-- 1 kulkarna ms4s86p  3486205 Jan 26 10:12 p128_2grain.mat
++ cd /local/2234889
++ cp -r window_only.2234889 /pylon5/ms4s86p/kulkarna/window_only
